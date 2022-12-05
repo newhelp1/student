@@ -1,0 +1,48 @@
+# 应用服务 WEB 访问端口
+server:
+  port: 9090
+# 应用名称
+spring:
+  application:
+    name: stu
+    # 数据库驱动：
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/stu?serverTimezone=GMT%2b8
+    username: root
+    password: 654321
+  spring:
+    mvc:
+      pathmatch:
+        matching-strategy: ant_path_matcher
+
+
+
+  mail:
+    protocol: smtps
+    host: smtp.163.com
+    # 发送的邮箱
+    username: m18790655651@163.com
+    #   网易邮箱授权码
+    password: NLPLHNJXSVBQOFXO
+    #    端口号465或587
+    port: 465
+    #    默认邮箱编码
+    default-encoding: UTF-8
+
+#下面这些内容是为了让MyBatis映射
+#指定Mybatis的Mapper文件
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  #指定Mybatis的实体目录
+  type-aliases-package: com.wyf.stu.mybatis.entity
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+files:
+  upload:
+    path:
+
+
